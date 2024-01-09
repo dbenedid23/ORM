@@ -22,7 +22,7 @@ public class Entrega1ORM {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String archivo;
-        CompraPojo cp = new CompraPojo();
+        //CompraPojo cp = new CompraPojo();
         // System.out.println(cp.mostrarAllCompra());
 
         String numerasion;
@@ -91,8 +91,6 @@ public class Entrega1ORM {
             System.err.println("Error al leer el archivo: " + e.getMessage());
         }
     }
-    
-
 
     private static void listarSuministros() {
         System.out.println("Suministros disponibles:");
@@ -111,16 +109,13 @@ public class Entrega1ORM {
         System.out.println("Ingrese la cantidad que desea usar:");
         int cantidad = Integer.parseInt(sc.nextLine());
 
-        if (suministro.equals(suministro)) {
-            cantidad -= cantidad;
-            Compra compra = new Compra(cantidad, suministro);
-            cp.updateCompra(compra);
-        }
+        Compra compra = new Compra(cantidad, suministro);
+        cp.updateCompra(compra);
 
     }
 
     private static void haySuministro(Scanner sc) {
-       // Compra compra;
+        // Compra compra;
         CompraPojo cp = new CompraPojo();
         System.out.println("Ingrese el suministro que desea buscar:");
         String suministro = sc.nextLine().toLowerCase();
@@ -129,6 +124,7 @@ public class Entrega1ORM {
 
         //  System.out.println(cp.getCompraBySuministro(suministro));
         System.out.println("Existen " + cantidadTotal + " unidades de " + suministro);
+
     }
 
     private static void adquirirSuministro(Scanner sc) {
@@ -137,9 +133,8 @@ public class Entrega1ORM {
         String suministro = sc.nextLine().toLowerCase();
         System.out.println("Ingrese la cantidad que desea adquirir:");
         int cantidad = Integer.parseInt(sc.nextLine());
-
         Compra compra = new Compra(cantidad, suministro);
-         cp.updateCompra(compra);
+       cp.addCompra(compra);
 
     }
 }

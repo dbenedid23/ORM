@@ -35,6 +35,7 @@ public class CompraPojo implements CompraDAO {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
+            compra.setId(getIdByname(compra));
             session.merge(compra);
             transaction.commit();
         } catch (Exception e) {
@@ -72,10 +73,6 @@ public class CompraPojo implements CompraDAO {
         }
     }
 
-//    @Override
-//    public int getId(Compra compra) {
-//       
-//    }
 
     @Override
     public Compra getCompra2(String suministro) {
@@ -86,6 +83,19 @@ public class CompraPojo implements CompraDAO {
         } catch (Exception e) {
             System.err.println(e);
             return null;
+        }
+    }
+
+    @Override
+    public int getIdByname(Compra compra) {
+          String suministro = compra.getSuministro();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){  
+            Query<Compra> query = session.createQuery("FROM Compra WHERE suministro = :value", Compra.class);
+            query.setParameter("value", suministro);  
+            return query.getFirstResult();  
+        } catch (Exception ex) {
+            System.err.println(ex);
+            return 0; 
         }
     }
 

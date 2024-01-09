@@ -17,5 +17,6 @@ public interface CompraDAO {
     int getCompraBySuministro(String suministro); //hay x suministro 
     Compra getCompra2(String suministro);
     void addCompra(Compra compra); //  adquirir x suministro
+    int getIdByname(Compra compra);
     //int getId(Compra compra);
 }
