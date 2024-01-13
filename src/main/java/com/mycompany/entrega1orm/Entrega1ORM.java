@@ -113,9 +113,9 @@ public class Entrega1ORM {
     private static void usarSuministro(Scanner sc) {
 
         CompraPojo cp = new CompraPojo();
-        System.out.println("Ingrese el suministro que desea usar:");
+        System.out.println("Ingresa el suministro que desea usar:");
         String suministro = sc.nextLine().toLowerCase();
-        System.out.println("Ingrese la cantidad que desea usar:");
+        System.out.println("Ingresa la cantidad que desea usar:");
         int cantidad = Integer.parseInt(sc.nextLine());
 
         if (cantidad > 0) {
