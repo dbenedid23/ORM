@@ -123,7 +123,7 @@ public class Entrega1ORM {
             for (Compra compra : cp.getCompra2(suministro)) {
                 System.out.println(compra);
                 if (cantidad > compra.getCantidad()) {
-                    System.out.println("Queda " + compra.getCantidad() + " de " + suministro);
+                    System.out.println("Quedan " + compra.getCantidad() + " de " + suministro);
                 } else if (cantidad == compra.getCantidad()) {
                     cp.deleteCompra(compra);
                 } else {
