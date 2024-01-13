@@ -1,0 +1,5 @@
+pojo/CompraPojo.class
+com/mycompany/entrega1orm/Entrega1ORM.class
+utils/HibernateUtil.class
+dao/CompraDAO.class
+model/Compra.class
